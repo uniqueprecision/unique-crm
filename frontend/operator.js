@@ -166,7 +166,7 @@ startBtn.onclick = async ()=>{
     return;
   }
 
-  const res = await fetch("/api/production/start",{
+  const res = await fetch(API + "/api/production/start"
     method:"POST",
     headers:{ "Content-Type":"application/json"},
     body:JSON.stringify({
@@ -246,6 +246,7 @@ completeBtn.onclick = async ()=>{
 window.addEventListener("DOMContentLoaded", () => {
   loadJobs();
 });
+
 
 
 
