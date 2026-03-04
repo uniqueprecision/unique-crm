@@ -1276,7 +1276,8 @@ app.get("/api/job/next-seq", async (req, res) => {
 app.get("/api/admin/designer-live", async (req, res) => {
   try {
 
-    const response = await sheets.spreadsheets.values.get({
+    const sh = await getSheets();
+const response = await sh.spreadsheets.values.get({
       spreadsheetId: process.env.SHEET_ID,
       range: "Jobs!A:J"
     });
@@ -1426,4 +1427,5 @@ qcRows.forEach(row => {
 app.listen(PORT, () => {
   console.log("Server running on port", PORT);
 });
+
 
