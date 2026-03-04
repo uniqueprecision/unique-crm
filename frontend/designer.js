@@ -1,6 +1,7 @@
 /* =========================
    UPW ERP – DESIGNER FINAL
 ========================= */
+const API_BASE = window.location.origin;
 
 // 🔒 Single source of truth
 let activeJobId = "";
@@ -29,7 +30,7 @@ async function loadDesignerDashboard() {
   inDesignTable.innerHTML = "";
   productionTable.innerHTML = "";
 
-  const res = await fetch("/api/orders/list");
+  const res = await fetch(API_BASE + "/api/orders/list");
   const orders = await res.json();
 
   let assigned = 0;
@@ -264,4 +265,5 @@ document.addEventListener("DOMContentLoaded", () => {
   showDesignerPage("assigned");
   loadDesignerDashboard();
 });
+
 
