@@ -1,3 +1,4 @@
+const API_BASE = window.location.origin;
 let timerInterval;
 const timerEl = document.getElementById("timer");
 
@@ -245,5 +246,6 @@ completeBtn.onclick = async ()=>{
 window.addEventListener("DOMContentLoaded", () => {
   loadJobs();
 });
+
 
 
