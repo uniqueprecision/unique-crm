@@ -660,9 +660,9 @@ async function loadDesignerLive() {
   data.forEach(row => {
     table.innerHTML += `
       <tr>
-        <td>${row[0]}</td>
-        <td>${row[1]}</td>
-        <td>${row[3]}</td>
+       <td>${row.jobId}</td>
+<td>${row.designer}</td>
+<td>${row.status}</td>
       </tr>
     `;
   });
@@ -701,6 +701,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", () => {
   loadAdminOverview();
 });
+
 
 
 
