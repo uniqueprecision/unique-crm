@@ -18,6 +18,20 @@ const { google } = require("googleapis");
 const app = express();
 const PORT = 3000;
 
+/* ===============================
+   FRONTEND SERVE
+================================ */
+
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend", "admin.html"));
+});
+
+app.get("/designer.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend", "designer.html"));
+});
+
 
 /* ===============================
    MIDDLEWARE
