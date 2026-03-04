@@ -229,7 +229,7 @@ resumeBtn.onclick = async ()=>{
 
 // ================= COMPLETE =================
 completeBtn.onclick = async ()=>{
-  await fetch("/api/production/complete",{
+  await fetch(API_BASE + "/api/operator/complete",{
     method:"POST",
     headers:{ "Content-Type":"application/json"},
     body:JSON.stringify({ jobId:jobDropdown.value })
@@ -245,4 +245,5 @@ completeBtn.onclick = async ()=>{
 window.addEventListener("DOMContentLoaded", () => {
   loadJobs();
 });
+
 
