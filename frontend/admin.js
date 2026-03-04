@@ -3,6 +3,7 @@
 // =========================
 let statusPieChart = null;
 let machineBarChart = null;
+const API_BASE = window.location.origin;
 
 
 
@@ -60,7 +61,7 @@ async function loadCustomers() {
   if (customerSelect)
     customerSelect.innerHTML = `<option value="">Select Customer</option>`;
 
-  const res = await fetch("/api/customers/list");
+  const res = await fetch(API_BASE + "/api/customers/list");
   const customers = await res.json();
 
   customers.forEach(c => {
@@ -327,7 +328,7 @@ document.addEventListener("click", async e => {
 async function loadOrders() {
   ordersTable.innerHTML = "";
 
-  const res = await fetch("/api/orders/list");
+  const res = await fetch(API_BASE + "/api/orders/list");
   const orders = await res.json();
 
   const table = document.getElementById("ordersTable");
@@ -699,4 +700,5 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", () => {
   loadAdminDashboard();
 });
+
 
