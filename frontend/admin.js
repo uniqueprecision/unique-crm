@@ -3,6 +3,7 @@
 // =========================
 let statusPieChart = null;
 let machineBarChart = null;
+
 const API_BASE = window.location.origin;
 
 
@@ -698,7 +699,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadAdminDashboard();
+  loadAdminOverview();
 });
+
 
 
