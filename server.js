@@ -590,36 +590,6 @@ app.post("/api/production/hold", async (req, res) => {
 /* ===============================
    COMPLETE PRODUCTION
 ================================ */
-app.post("/api/operator/complete", async (req, res) => {
-  try {
-    const { jobId } = req.body;
-    const sh = await getSheets();
-
-    const jobs = await sh.spreadsheets.values.get({
-      spreadsheetId: SPREADSHEET_ID,
-      range: "Jobs!A:J"
-    });
-
-    const rows = jobs.data.values;
-    const idx = rows.findIndex(r => r[0] === jobId);
-
-    if (idx === -1) return res.json({ success: false });
-
-    rows[idx][9] = "COMPLETED";
-
-    await sh.spreadsheets.values.update({
-      spreadsheetId: SPREADSHEET_ID,
-      range: "Jobs!A:J",
-      valueInputOption: "USER_ENTERED",
-      requestBody: { values: rows }
-    });
-
-    res.json({ success: true });
-
-  } catch {
-    res.status(500).json({ success: false });
-  }
-});
 
 // ===============================
 // GET CURRENT PRODUCTION STATUS
@@ -1427,5 +1397,6 @@ qcRows.forEach(row => {
 app.listen(PORT, () => {
   console.log("Server running on port", PORT);
 });
+
 
 
