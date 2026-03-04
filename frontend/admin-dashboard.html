@@ -1,0 +1,39 @@
+<body>
+
+<div class="header">
+  <h1>Unique Precision Works – Admin Dashboard</h1>
+</div>
+
+<div class="page">
+
+<div class="stats">
+  <div class="stat-box"><p>Total Orders</p><h2 id="totalOrders">0</h2></div>
+  <div class="stat-box gold"><p>In Production</p><h2 id="inProgress">0</h2></div>
+  <div class="stat-box orange"><p>On Hold</p><h2 id="onHold">0</h2></div>
+  <div class="stat-box gray"><p>QC Pending</p><h2 id="qcPending">0</h2></div>
+  <div class="stat-box green"><p>Ready Delivery</p><h2 id="readyDelivery">0</h2></div>
+  <div class="stat-box"><p>Rework</p><h2 id="rework">0</h2></div>
+</div>
+
+<div class="card">
+<h3>Live Job Tracking</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Job ID</th>
+      <th>Customer</th>
+      <th>Designer</th>
+      <th>Machine</th>
+      <th>Status</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <tbody id="jobTable"></tbody>
+</table>
+</div>
+
+</div>
+
+<script src="admin-dashboard.js"></script>
+</body>
