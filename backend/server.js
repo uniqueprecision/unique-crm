@@ -30,15 +30,18 @@ app.use(express.urlencoded({ extended: true }));
 /* ===============================
    STATIC FRONTEND
 ================================ */
-app.use(express.static(path.join(__dirname, "../frontend")));
+app.use(express.static(path.join(__dirname, "frontend")));
 
 /* ===============================
    ROOT
 ================================ */
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend", "admin.html"));
+  res.sendFile(path.join(__dirname, "frontend", "admin.html"));
 });
 
+app.get("/designer.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "designer.html"));
+});
 /* ===============================
    GOOGLE SHEETS CONFIG
 ================================ */
