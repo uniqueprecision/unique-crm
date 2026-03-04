@@ -30,7 +30,7 @@ async function loadDesignerDashboard() {
   inDesignTable.innerHTML = "";
   productionTable.innerHTML = "";
 
-  const res = await fetch(API_BASE + "/api/orders/list");
+  const res = await fetch(API + "/api/orders/list")
   const orders = await res.json();
 
   let assigned = 0;
@@ -236,7 +236,7 @@ async function generateQR() {
 
 async function openDesignWorkspace(orderId) {
 
-  const res = await fetch("/api/orders/list");
+  const res = await fetch(API + "/api/orders/list")
   const orders = await res.json();
   const o = orders.find(x => x.orderId === orderId);
 
@@ -265,5 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
   showDesignerPage("assigned");
   loadDesignerDashboard();
 });
+
 
 
