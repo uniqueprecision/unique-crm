@@ -1,3 +1,5 @@
+const API="https://script.google.com/macros/s/AKfycbyTNNA50MRLsjetmyLlqSz5Quo9TGme9UCTFBe3RK29n70wyTaz5tPHmdM_OH9cTDBaCQ/exec"
+
 // =========================
 // CHART INSTANCES (GLOBAL)
 // =========================
@@ -699,4 +701,5 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", () => {
   loadAdminDashboard();
 });
+
 
