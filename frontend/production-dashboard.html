@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UPW ERP – Production Live</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="logo">UPW ERP – Production Dashboard</div>
+  <div class="profile">Live View</div>
+</div>
+
+<div class="main">
+
+  <!-- KPI -->
+  <div class="stats">
+    <div class="stat-card blue">
+      <p>Total Jobs</p>
+      <h2 id="kpiTotal">0</h2>
+    </div>
+    <div class="stat-card amber">
+      <p>Running</p>
+      <h2 id="kpiRunning">0</h2>
+    </div>
+    <div class="stat-card green">
+      <p>Completed</p>
+      <h2 id="kpiCompleted">0</h2>
+    </div>
+    <div class="stat-card red">
+      <p>QC Pending</p>
+      <h2 id="kpiQC">0</h2>
+    </div>
+  </div>
+
+  <!-- LIVE TABLE -->
+  <div class="card">
+    <h3>Live Production Status</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Job ID</th>
+          <th>Machine</th>
+          <th>Operator</th>
+          <th>Status</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody id="prodTable"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="production-dashboard.js"></script>
+</body>
+</html>
